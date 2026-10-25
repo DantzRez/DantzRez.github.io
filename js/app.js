@@ -5,7 +5,6 @@
   const prevButton = document.getElementById('prevDay');
   const nextButton = document.getElementById('nextDay');
   const dayPosition = document.getElementById('dayPosition');
-  const firstDayButton = document.getElementById('todayButton');
   let activeIndex = Number(localStorage.getItem('japanPlannerActiveDay') || 0);
   let openPlannerTab = null;
   if (!Number.isInteger(activeIndex) || activeIndex < 0 || activeIndex >= days.length) activeIndex = 0;
@@ -225,7 +224,6 @@
 
   prevButton.addEventListener('click', () => selectDay(activeIndex - 1));
   nextButton.addEventListener('click', () => selectDay(activeIndex + 1));
-  firstDayButton.addEventListener('click', () => selectDay(0));
   document.addEventListener('keydown', event => {
     if (event.key === 'ArrowLeft') selectDay(activeIndex - 1);
     if (event.key === 'ArrowRight') selectDay(activeIndex + 1);
